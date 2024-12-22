@@ -22,7 +22,7 @@ class CustomerFactory extends Factory
     public function definition(): array
     {
         $type = $this->faker->randomElement(Type::values());
-        $name = $type == Type::Individual ? $this->faker->name() : $this->faker->company();
+        $name = $type == Type::Individual->value ? $this->faker->name() : $this->faker->company();
 
         return [
             'name' => $name,

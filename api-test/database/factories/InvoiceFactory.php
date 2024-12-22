@@ -29,7 +29,7 @@ class InvoiceFactory extends Factory
             'amount' => $this->faker->randomFloat(2, 100, 20000),
             'status' => $status,
             'billed_date' => $billDate,
-            'paid_date' => $status == Status::Paid ? $this->faker->dateTimeBetween($billDate) : null,
+            'paid_date' => $status === Status::Paid->value ? $this->faker->dateTimeBetween(startDate: $billDate) : null
         ];
     }
 }
