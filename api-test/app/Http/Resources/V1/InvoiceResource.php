@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
- * @property mixed $paid_date
- * @property mixed $billed_date
- * @property mixed $status
- * @property mixed $amount
- * @property mixed $customer_id
  * @property mixed $id
+ * @property mixed $customer_id
+ * @property mixed $amount
+ * @property mixed $status
+ * @property mixed $billed_date
+ * @property mixed $paid_date
  */
 class InvoiceResource extends JsonResource
 {

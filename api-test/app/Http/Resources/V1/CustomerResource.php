@@ -7,13 +7,13 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
  * @property int $id
- * @property mixed $postal_code
- * @property mixed $state
- * @property mixed $city
- * @property mixed $address
- * @property mixed $email
- * @property mixed $type
  * @property mixed $name
+ * @property mixed $type
+ * @property mixed $email
+ * @property mixed $address
+ * @property mixed $city
+ * @property mixed $state
+ * @property mixed $postal_code
  */
 class CustomerResource extends JsonResource
 {
@@ -32,7 +32,8 @@ class CustomerResource extends JsonResource
             'address' => $this->address,
             'city' => $this->city,
             'state' => $this->state,
-            'postalCode' => $this->postal_code
+            'postalCode' => $this->postal_code,
+            'invoices' => InvoiceResource::collection($this->whenLoaded('invoices'))
         ];
     }
 }
